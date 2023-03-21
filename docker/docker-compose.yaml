@@ -1,0 +1,15 @@
+---
+
+version: '3'
+
+services:
+  python:
+    build: .
+    container_name: "python"
+    working_dir: "/home/nakadats/dev"
+    tty: true
+    volumes:
+      - "/Users/nakadats/Desktop/TechLabSatoru/toy/slack-bot/dev/:/home/nakadats/dev"
+    ports:
+      - 8888:8888
+    command: jupyter-notebook --ip 0.0.0.0 --allow-root --NotebookApp.token=''
